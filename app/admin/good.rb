@@ -13,5 +13,6 @@ ActiveAdmin.register Good do
 #   permitted
 # end
 
+permit_params :name, :type, :origin, :store, :percentage, :product_id
 
 end

@@ -13,5 +13,7 @@ ActiveAdmin.register Supplier do
 #   permitted
 # end
 
+permit_params :name, :contact, :phone_number, :address,
+  :bank_account_number, :bank_account_name
 
 end

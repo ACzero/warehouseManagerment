@@ -13,5 +13,6 @@ ActiveAdmin.register DeliverHistory do
 #   permitted
 # end
 
+permit_params :amount, :bill_id
 
 end

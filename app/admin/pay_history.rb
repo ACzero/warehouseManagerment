@@ -13,5 +13,6 @@ ActiveAdmin.register PayHistory do
 #   permitted
 # end
 
+permit_params :pay, :bill_id
 
 end
