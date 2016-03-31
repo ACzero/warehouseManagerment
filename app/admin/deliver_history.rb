@@ -1,18 +1,18 @@
 ActiveAdmin.register DeliverHistory do
+  permit_params :amount, :bill_id
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  form do |f|
+    f.inputs do
+      f.input :bill, :collection => Bill.all.map { |b| [b.name, b.id] }, :selected => assigns[:bill_id], include_blank: false
+      f.input :amount
+    end
+  end
 
-permit_params :amount, :bill_id
+  controller do
+    def new
+      @bill_id = params[:bill_id]
+      super
+    end
+  end
 
 end
