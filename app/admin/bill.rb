@@ -1,5 +1,6 @@
 ActiveAdmin.register Bill do
-  permit_params :total_amount, :total_price, :good_id, :trader_id, :trader_type
+  permit_params :name, :total_amount, :total_price,
+                :good_id, :trader_id, :trader_type
 
   # remove new button on index page
   config.remove_action_item(:new)
@@ -21,6 +22,16 @@ ActiveAdmin.register Bill do
     column :trader_type
     column :created_at
     actions defaults: true
+    actions defaults: false do |bill|
+      if bill.deliver_histories.present?
+        link_to '查看送货记录', admin_deliver_histories_path(q: { bill_id_eq: bill.id })
+      end
+    end
+    actions defaults: false do |bill|
+      if bill.pay_histories.present?
+        link_to '查看付费记录', admin_pay_histories_path(q: { bill_id_eq: bill.id })
+      end
+    end
     actions defaults: false do |bill|
       link_to '添加送货记录', new_admin_deliver_history_path(bill_id: bill.id)
     end
