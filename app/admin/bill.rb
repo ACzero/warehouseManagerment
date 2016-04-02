@@ -53,6 +53,10 @@ ActiveAdmin.register Bill do
   end
 
   controller do
+    def scoped_collection
+      Bill.includes(:deliver_histories, :pay_histories)
+    end
+
     def new
       @trader_type = params[:trader_type] == "Buyer" ? "Buyer" : "Supplier"
       @trader_collection = @trader_type.constantize.all
