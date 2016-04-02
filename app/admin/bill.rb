@@ -17,9 +17,18 @@ ActiveAdmin.register Bill do
 
   index do
     column :name
-    column :total_amount
-    column :total_price
-    column :trader_type
+    column '总量' do |bill|
+      bill.total_amount + (bill_statistics[bill.id].try(:[], :total_amount) || 0)
+    end
+    column '总额' do |bill|
+      bill.total_price + (bill_statistics[bill.id].try(:[], :total_pay) || 0)
+    end
+    column '剩余量' do |bill|
+      bill.total_amount
+    end
+    column '剩余金额' do |bill|
+      bill.total_price
+    end
     column :created_at
     actions defaults: true
     actions defaults: false do |bill|
@@ -55,6 +64,12 @@ ActiveAdmin.register Bill do
   controller do
     def scoped_collection
       Bill.includes(:deliver_histories, :pay_histories)
+    end
+
+    def index
+      super do |format|
+        @bill_statistics = Bill.statistics(@bills.pluck(:id))
+      end
     end
 
     def new
