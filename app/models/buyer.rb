@@ -1,3 +1,3 @@
 class Buyer < ActiveRecord::Base
-  has_many :bill, as: :trader
+  has_many :bills, as: :trader
 end
