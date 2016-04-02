@@ -1,0 +1,12 @@
+zh-CN:
+  activerecord:
+    models:
+      good: "商品"
+    attributes:
+      good:
+        name: "名称"
+        good_type: "类型"
+        origin: "原产地"
+        store: "初始库存"
+        product_id: "成品"
+        percentage: "占比"
