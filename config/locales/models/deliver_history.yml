@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    models:
+      deliver_history: "送货记录"
+    attributes:
+      deliver_history:
+        bill: "账单"
+        amount: "数量"

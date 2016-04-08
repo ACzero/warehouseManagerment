@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    models:
+      pay_history: "付费记录"
+    attributes:
+      pay_history:
+        bill: "账单"
+        amount: "金额"
