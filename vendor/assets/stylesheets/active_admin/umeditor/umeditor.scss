@@ -66,8 +66,8 @@
     margin: 0;
     padding:0;
     background-repeat: no-repeat;
-    background-image: url(../images/icons.png);
-    background-image: url(../images/icons.gif) \9;
+    background-image: asset-url('active_admin/umeditor/images/icons.png');
+    background-image: asset-url('active_admin/umeditor/images/icons.gif') \9;
 }
 
 /*状态反射*/
@@ -230,8 +230,8 @@
     *zoom:1;
     width: 8px;
     height: 20px;
-    background: url(../images/icons.png) -741px 0;
-    _background: url(../images/icons.gif) -741px 0;
+    background: asset-url('active_admin/umeditor/images/icons.png') -741px 0;
+    _background: asset-url('active_admin/umeditor/images/icons.gif') -741px 0;
 }
 
 .edui-btn-toolbar .edui-splitbutton,
@@ -295,8 +295,8 @@
     width: 12px;
     margin: 0;
     padding: 0;
-    background: url(../images/icons.png) -741px 0;
-    _background: url(../images/icons.gif) -741px 0;
+    background: asset-url('active_admin/umeditor/images/icons.png') -741px 0;
+    _background: asset-url('active_admin/umeditor/images/icons.gif') -741px 0;
 }
 .edui-btn-toolbar .edui-combobox.edui-disabled{
     opacity: 0.2;
@@ -352,7 +352,7 @@
     height: 25px;
     background: red;
     vertical-align: bottom;
-    background: url(../images/ok.gif) no-repeat 1000px 1000px;
+    background: asset-url('active_admin/umeditor/images/ok.gif') no-repeat 1000px 1000px;
 }
 
 .edui-combobox-menu .edui-combobox-checked .edui-combobox-icon {
@@ -514,7 +514,7 @@
     margin-top: 2px;
     padding: 1px;
     border: 0;
-    background: url("../images/close.png") no-repeat center center;
+    background: asset-url('active_admin/umeditor/images/close.png') no-repeat center center;
     cursor: pointer;
 }
 .edui-modal-header .edui-close.edui-hover {
@@ -604,7 +604,7 @@
 }
 .edui-popup{
     display: none;
-    background: url('../images/pop-bg.png') repeat #fff;
+    background: asset-asset-url('active_admin/umeditor/images/pop-bg.png') repeat #fff;
     padding: 2px;
 }
 .edui-popup .edui-popup-body{
@@ -616,10 +616,10 @@
     height: 11px;
 }
 .edui-popup .edui-popup-caret.up{
-    background:url('../images/caret.png') no-repeat 0 0;
+    background:asset-url('active_admin/umeditor/images/caret.png') no-repeat 0 0;
 }
 .edui-popup .edui-popup-caret.down{
-    background:url('../images/caret.png') no-repeat 0 0;
+    background:asset-url('active_admin/umeditor/images/caret.png') no-repeat 0 0;
 }
 
 
@@ -762,8 +762,8 @@
     width: 2px;
     height: 20px;
     padding: 1px 2px;
-    background: url(../images/icons.png) -179px 1px;
-    background: url(../images/icons.gif) -179px 1px \9;
+    background: asset-url('active_admin/umeditor/images/icons.png') -179px 1px;
+    background: asset-path('active_admin/umeditor/images/icons.gif') -179px 1px \9;
     display: inline-block ;
     vertical-align: top;
     *display: inline ;
