@@ -16,7 +16,7 @@ ActiveAdmin.register Good do
 
   form do |f|
     f.inputs do
-      f.input :name
+      f.input :name, as: :um_editor
       f.input :good_type, :include_blank => false,
         :collection => [['成品', 'product'], ['原材料', 'raw']]
       f.input :origin
