@@ -8,8 +8,6 @@ ActiveAdmin.register Good do
     column :total do |good|
       (assigns[:goods_statistics][good.id] || 0) + good.store
     end
-    column :product
-    column :percentage
     actions
   end
 
@@ -18,8 +16,6 @@ ActiveAdmin.register Good do
       f.input :name
       f.input :origin
       f.input :store
-      f.input :product
-      f.input :percentage
     end
     f.actions
   end

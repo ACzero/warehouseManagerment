@@ -1,0 +1,11 @@
+zh-CN:
+  activerecord:
+    models:
+      admin_user: "管理员用户"
+    attributes:
+      admin_user:
+        current_sign_in_at: "当期登录时间"
+        sign_in_count: "登录次数"
+        created_at: "创建时间"
+        password: "密码"
+        password_confirmation: "再次输入密码"

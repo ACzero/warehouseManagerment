@@ -1,9 +1,9 @@
 zh-CN:
   activerecord:
     models:
-      bill: "账单"
+      buyer_bill: "出售记录"
     attributes:
-      bill:
+      buyer_bill:
         total_amount: "总量"
         total_price: "总价"
         good_id: "商品"
@@ -12,3 +12,4 @@ zh-CN:
         name: "名称"
         created_at: "创建日期"
         updated_at: "更新日期"
+        good: "商品"

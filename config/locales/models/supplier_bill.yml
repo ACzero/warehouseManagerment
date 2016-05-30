@@ -1,0 +1,15 @@
+zh-CN:
+  activerecord:
+    models:
+      supplier_bill: "进货账单"
+    attributes:
+      supplier_bill:
+        total_amount: "总量"
+        total_price: "总价"
+        good_id: "商品"
+        trader_id: "交易方"
+        trader_type: "交易方类型"
+        good: "商品"
+        name: "备注"
+        created_at: "创建日期"
+        updated_at: "更新日期"
