@@ -17,4 +17,6 @@ ActiveAdmin.register Buyer do
     :bank_account_number, :bank_account_name
 
   filter :name
+
+  menu priority: 5
 end

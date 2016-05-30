@@ -4,6 +4,8 @@ ActiveAdmin.register Good do
   filter :name
   filter :origin
 
+  menu priority: 3
+
   index do
     column :name
     column :origin

@@ -12,6 +12,8 @@ ActiveAdmin.register BuyerBill do
   filter :total_price
   filter :created_at
 
+  menu priority: 7
+
   # action_item :add_import_bill, only: [:index] do
   #   link_to '添加进货单', new_admin_supplier_bill_path(trader_type: "Supplier")
   # end

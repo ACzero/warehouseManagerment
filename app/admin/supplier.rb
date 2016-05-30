@@ -17,4 +17,6 @@ ActiveAdmin.register Supplier do
   :bank_account_number, :bank_account_name
 
   filter :name
+
+  menu priority: 4
 end
