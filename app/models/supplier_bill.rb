@@ -1,0 +1,3 @@
+class SupplierBill < Bill
+  
+end

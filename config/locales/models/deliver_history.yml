@@ -6,3 +6,5 @@ zh-CN:
       deliver_history:
         bill: "账单"
         amount: "数量"
+        created_at: "创建时间"
+        updated_at: "更新时间"

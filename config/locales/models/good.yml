@@ -10,3 +10,5 @@ zh-CN:
         store: "初始库存"
         product_id: "成品"
         percentage: "占比"
+        created_at: "创建时间"
+        updated_at: "更新时间"

@@ -1,4 +1,4 @@
-ActiveAdmin.register Bill do
+ActiveAdmin.register SupplierBill do
   permit_params :name, :total_amount, :total_price,
                 :good_id, :trader_id, :trader_type
 
@@ -8,15 +8,16 @@ ActiveAdmin.register Bill do
   actions :all, :except => [:new, :edit]
 
   action_item :add_import_bill, only: [:index] do
-    link_to '添加进货单', new_admin_bill_path(trader_type: "Supplier")
+    link_to '添加进货单', new_admin_supplier_bill_path(trader_type: "Supplier")
   end
-
-  action_item :add_sell_bill, only: [:index] do
-    link_to '添加销售单', new_admin_bill_path(trader_type: "Buyer")
-  end
+  #
+  # action_item :add_sell_bill, only: [:index] do
+  #   link_to '添加销售单', new_admin_bill_path(trader_type: "Buyer")
+  # end
 
   index do
     column :name
+    column :good
     column '总量' do |bill|
       bill.total_amount + (bill_statistics[bill.id].try(:[], :total_amount) || 0)
     end
@@ -63,12 +64,12 @@ ActiveAdmin.register Bill do
 
   controller do
     def scoped_collection
-      Bill.includes(:deliver_histories, :pay_histories)
+      SupplierBill.includes(:deliver_histories, :pay_histories)
     end
 
     def index
       super do |format|
-        @bill_statistics = Bill.statistics(@bills.pluck(:id))
+        @bill_statistics = Bill.statistics(@supplier_bills.pluck(:id))
       end
     end
 

@@ -6,3 +6,5 @@ zh-CN:
       pay_history:
         bill: "账单"
         amount: "金额"
+        created_at: "创建时间"
+        updated_at: "更新时间"
