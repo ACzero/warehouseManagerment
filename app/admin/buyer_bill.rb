@@ -7,6 +7,11 @@ ActiveAdmin.register BuyerBill do
   # remove new & edit button on other place
   actions :all, :except => [:new, :edit]
 
+  filter :good
+  filter :total_amount
+  filter :total_price
+  filter :created_at
+
   # action_item :add_import_bill, only: [:index] do
   #   link_to '添加进货单', new_admin_supplier_bill_path(trader_type: "Supplier")
   # end
@@ -53,7 +58,7 @@ ActiveAdmin.register BuyerBill do
     inputs do
       f.input :trader_type, :as => :hidden, :input_html => { value: assigns[:trader_type] }
       f.input :trader, collection: assigns[:trader_collection], :include_blank => false
-      f.input :good
+      f.input :good, include_blank: false
       f.input :total_amount
       f.input :total_price
     end

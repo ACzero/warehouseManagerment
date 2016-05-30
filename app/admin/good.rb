@@ -1,6 +1,9 @@
 ActiveAdmin.register Good do
   permit_params :name, :good_type, :origin, :store, :percentage, :product_id
 
+  filter :name
+  filter :origin
+
   index do
     column :name
     column :origin

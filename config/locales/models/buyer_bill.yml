@@ -4,12 +4,13 @@ zh-CN:
       buyer_bill: "出售记录"
     attributes:
       buyer_bill:
+        trader: "顾客"
         total_amount: "总量"
         total_price: "总价"
         good_id: "商品"
         trader_id: "交易方"
         trader_type: "交易方类型"
         name: "名称"
-        created_at: "创建日期"
+        created_at: "购买日期"
         updated_at: "更新日期"
         good: "商品"

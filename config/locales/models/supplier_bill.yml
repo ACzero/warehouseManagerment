@@ -4,6 +4,7 @@ zh-CN:
       supplier_bill: "进货账单"
     attributes:
       supplier_bill:
+        trader: "供应商"
         total_amount: "总量"
         total_price: "总价"
         good_id: "商品"

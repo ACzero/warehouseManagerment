@@ -4,6 +4,8 @@ class Bill < ActiveRecord::Base
   belongs_to :trader, polymorphic: true
   belongs_to :good
 
+  validates :total_amount, :total_price, :good, :trader, presence: true
+
   def self.statistics(target_bills = nil)
     statistics = target_bills ? all_statistics.where(id: target_bills) : all_statistics
     statistics_arr = statistics.map do |bill|

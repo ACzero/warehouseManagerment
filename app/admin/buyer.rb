@@ -13,7 +13,8 @@ ActiveAdmin.register Buyer do
 #   permitted
 # end
 
-permit_params :name, :contact, :phone_number, :address,
-  :bank_account_number, :bank_account_name
+  permit_params :name, :contact, :phone_number, :address,
+    :bank_account_number, :bank_account_name
 
+  filter :name
 end
