@@ -4,7 +4,7 @@ class Good < ActiveRecord::Base
 
   enum good_type: [ :raw, :product ]
 
-  before_create :check_good_type
+  # before_create :check_good_type
 
   def self.good_amount_statistics(target_goods = nil)
     statistics = target_goods.nil? ? bills_amount_statistics : bills_amount_statistics.where(good_id: target_goods)

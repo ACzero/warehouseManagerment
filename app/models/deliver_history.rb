@@ -7,6 +7,9 @@ class DeliverHistory < ActiveRecord::Base
   private
   def change_bill_amount
     bill = Bill.find_by_id(self.bill_id)
+    p bill
+    p self
+
     if bill
       bill.with_lock do
         bill.total_amount -= self.amount
