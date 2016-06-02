@@ -16,11 +16,13 @@ pc = []
 pd = []
 pe = []
 
-(1..5).each_with_index do |month, idx|
+(1..6).each_with_index do |month, idx|
   num = 100 * (idx + 1)
-  (1..28).each_with_index do |day, index|
+  base = (6 * rand).round(0)
+  (1..31).each_with_index do |day, index|
+    next if Time.zone.parse("2016-0#{month}-#{day}").to_date >= Time.zone.now.to_date
     id = index + num
-    amount = 3 + (3 * rand).round(0)
+    amount = base + (11 * rand).round(0)
     total_price = amount * 5
 
     ga << {
@@ -30,7 +32,7 @@ pe = []
       trader_type: "Buyer",
       total_amount: amount,
       total_price: total_price,
-      created_at: Time.parse("2016-0#{month}-#{day}")
+      created_at: Time.zone.parse("2016-0#{month}-#{day}")
     }
 
     da << {
@@ -45,11 +47,13 @@ pe = []
   end
 end
 
-(1..5).each_with_index do |month, idx|
-  num = 100 * (idx + 6)
-  (1..28).each_with_index do |day, index|
+(1..6).each_with_index do |month, idx|
+  num = 100 * (idx + 10)
+  base = (6 * rand).round(0)
+  (1..31).each_with_index do |day, index|
+    next if Time.zone.parse("2016-0#{month}-#{day}").to_date >= Time.zone.now.to_date
     id = index + num
-    amount = 3 + (3 * rand).round(0)
+    amount = 3 + (20 * rand).round(0)
     total_price = amount * 8
 
     gb << {
@@ -59,7 +63,7 @@ end
       trader_type: "Buyer",
       total_amount: amount,
       total_price: total_price,
-      created_at: Time.parse("2016-0#{month}-#{day}")
+      created_at: Time.zone.parse("2016-0#{month}-#{day}")
     }
 
     db << {
@@ -74,11 +78,13 @@ end
   end
 end
 
-(1..5).each_with_index do |month, idx|
-  num = 100 * (idx + 11)
-  (1..28).each_with_index do |day, index|
+(1..6).each_with_index do |month, idx|
+  num = 100 * (idx + 20)
+  base = (4 * rand).round(0)
+  (1..31).each_with_index do |day, index|
+    next if Time.zone.parse("2016-0#{month}-#{day}").to_date >= Time.zone.now.to_date
     id = index + num
-    amount = 3 + (3 * rand).round(0)
+    amount = base + (15 * rand).round(0)
     total_price = amount * 10
 
     gc << {
@@ -88,7 +94,7 @@ end
       trader_type: "Buyer",
       total_amount: amount,
       total_price: total_price,
-      created_at: Time.parse("2016-0#{month}-#{day}")
+      created_at: Time.zone.parse("2016-0#{month}-#{day}")
     }
 
     dc << {
@@ -103,11 +109,13 @@ end
   end
 end
 
-(1..5).each_with_index do |month, idx|
-  num = 100 * (idx + 16)
-  (1..28).each_with_index do |day, index|
+(1..6).each_with_index do |month, idx|
+  num = 100 * (idx + 30)
+  base = (5 * rand).round(0)
+  (1..31).each_with_index do |day, index|
+    next if Time.zone.parse("2016-0#{month}-#{day}").to_date >= Time.zone.now.to_date
     id = index + num
-    amount = 3 + (3 * rand).round(0)
+    amount = base + (18 * rand).round(0)
     total_price = amount * 6
 
     gd << {
@@ -117,7 +125,7 @@ end
       trader_type: "Buyer",
       total_amount: amount,
       total_price: total_price,
-      created_at: Time.parse("2016-0#{month}-#{day}")
+      created_at: Time.zone.parse("2016-0#{month}-#{day}")
     }
 
     dd << {
@@ -132,11 +140,13 @@ end
   end
 end
 
-(1..5).each_with_index do |month, idx|
-  num = 100 * (idx + 21)
-  (1..28).each_with_index do |day, index|
+(1..6).each_with_index do |month, idx|
+  num = 100 * (idx + 40)
+  base = (3 * rand).round(0)
+  (1..31).each_with_index do |day, index|
+    next if Time.zone.parse("2016-0#{month}-#{day}").to_date >= Time.zone.now.to_date
     id = index + num
-    amount = 3 + (3 * rand).round(0)
+    amount = base + (17 * rand).round(0)
     total_price = amount * 2
 
     ge << {
@@ -146,7 +156,7 @@ end
       trader_type: "Buyer",
       total_amount: amount,
       total_price: total_price,
-      created_at: Time.parse("2016-0#{month}-#{day}")
+      created_at: Time.zone.parse("2016-0#{month}-#{day}")
     }
 
     de << {
