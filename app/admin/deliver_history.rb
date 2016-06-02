@@ -12,12 +12,12 @@ ActiveAdmin.register DeliverHistory do
 
   form do |f|
     f.inputs do
-      f.input :bill, :collection => Bill.all.map { |b| [b.name, b.id] }, :selected => assigns[:bill_id], include_blank: false
+      f.input :bill_id, as: :hidden, input_html: { value: assigns[:bill_id] }
       f.input :amount
     end
     f.actions do
       f.action :submit
-      f.cancel_link admin_bills_path
+      f.cancel_link :back
     end
   end
 
