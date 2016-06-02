@@ -8,11 +8,11 @@ ActiveAdmin.register BuyerBill do
   actions :all, :except => [:new, :edit]
 
   filter :good
-  filter :total_amount
-  filter :total_price
   filter :created_at
 
   menu priority: 7
+
+  config.sort_order = "created_at_desc"
 
   # action_item :add_import_bill, only: [:index] do
   #   link_to '添加进货单', new_admin_supplier_bill_path(trader_type: "Supplier")
@@ -88,5 +88,19 @@ ActiveAdmin.register BuyerBill do
       super
       @buyer_bill.create_buy_and_deliver
     end
+  end
+
+  csv do
+    bill_statistics = Bill.statistics(BuyerBill.all.pluck(:id))
+    column '商品' do |bill|
+      bill.good.name
+    end
+    column '总量' do |bill|
+      bill.total_amount + (bill_statistics[bill.id].try(:[], :total_amount) || 0)
+    end
+    column '总额' do |bill|
+      bill.total_price + (bill_statistics[bill.id].try(:[], :total_pay) || 0)
+    end
+    column :created_at
   end
 end

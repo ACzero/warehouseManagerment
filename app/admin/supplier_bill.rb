@@ -9,11 +9,11 @@ ActiveAdmin.register SupplierBill do
 
   filter :name
   filter :good
-  filter :total_amount
-  filter :total_price
   filter :created_at
 
   menu priority: 6
+
+  config.sort_order = "created_at_desc"
 
   action_item :add_import_bill, only: [:index] do
     link_to '添加进货单', new_admin_supplier_bill_path(trader_type: "Supplier")
@@ -86,5 +86,26 @@ ActiveAdmin.register SupplierBill do
       @trader_collection = @trader_type.constantize.all
       super
     end
+  end
+
+  csv do
+    bill_statistics = Bill.statistics(SupplierBill.all.pluck(:id))
+    column :name
+    column '商品' do |bill|
+      bill.good.name
+    end
+    column '总量' do |bill|
+      bill.total_amount + (bill_statistics[bill.id].try(:[], :total_amount) || 0)
+    end
+    column '总额' do |bill|
+      bill.total_price + (bill_statistics[bill.id].try(:[], :total_pay) || 0)
+    end
+    column '剩余量' do |bill|
+      bill.total_amount
+    end
+    column '剩余金额' do |bill|
+      bill.total_price
+    end
+    column :created_at
   end
 end
